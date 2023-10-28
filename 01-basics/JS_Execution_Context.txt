@@ -1,0 +1,32 @@
+JavaScript Execution Context – How JS Works Behind The Scenes:
+During the Execution Context run-time, the specific code gets parsed by a parser, 
+the variables and functions are stored in memory, executable byte-code gets generated, 
+and the code gets executed.
+
+There are two kinds of Execution Context in JavaScript:
+1) Global Execution Context (GEC)
+2) Function Execution Context (FEC)
+
+Global Execution Context (GEC)
+Whenever the JavaScript engine receives a script file, it first creates a default Execution Context 
+known as the Global Execution Context (GEC).
+
+Function Execution Context (FEC)
+Whenever a function is called, the JavaScript engine creates a different type of Execution Context 
+known as a Function Execution Context (FEC) within the GEC to evaluate and execute the code.
+
+The creation of an Execution Context (GEC or FEC) happens in two phases:
+1) Memory Creation Phase --> All the variables declared in the script will get 
+                            Creation of the Variable Object (VO), Creation of the Scope Chain and 
+                            Setting the value of the this keyword
+2) Execution Phase --> In this stage, actual code begins execution. 
+                    First, the script is loaded into the JS engine.
+                    The JS engine creates the GEC and places it at the base of the "execution stack".
+
+                    Call/Execution Stack : LIFO(Last In First Out)
+                    |       |
+                    |       |
+                    |  FUN2 |
+                    |  FUN1 |
+                    |  GEC  |
+                     -------
