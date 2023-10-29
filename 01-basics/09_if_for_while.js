@@ -98,3 +98,82 @@ do {
     console.log(`SuperHeros: ${course[inx]}`);
     inx++;
 } while (inx < course.length);
+
+
+//'for of' loop
+/* for (const iterator of object) {
+    //Executes the block for number of elements in the object
+} */
+console.log(`***--- for of Loop on an array object---***`);
+const nums = [1,3,5,4,2]
+for (const num of nums) {
+    console.log(`iteration: ${num}`);
+}
+
+console.log(`***--- for of Loop on a string object ---***`);
+const name = "Nag Kup"
+for (const char of name) {
+    console.log(`Characters in name: ${char}`);
+} 
+
+console.log(`***--- for of Loop on a Map object ---***`);
+//map object holds key-value pairs and remembers the original insertion order of the keys.
+const sampleMap = new Map()
+sampleMap.set("1","first")
+sampleMap.set("3","third")
+sampleMap.set("2","second")
+sampleMap.set("4","forth")
+console.log(sampleMap);
+
+//for of Loop on a Map object
+for (const [key,value] of sampleMap) {
+    console.log(`For key ${key} the value is ${value}`);
+}
+
+/*** for of loop will not iterate on js objects 
+ * For iterate js objects, for in loop is recommended
+*/
+console.log(`***--- for in Loop on a js objects ---***`);
+const sampleObject = {
+    1 : "first",
+    2 : "second",
+    3 : "third"
+}
+
+console.log(sampleObject);
+
+//for in loop on js object
+for (const key in sampleObject) {
+    console.log(sampleObject[key]);
+}
+
+/*** for each loop */
+/*array.forEach((element,index,array) => {
+   //iterate on number of array elements 
+});*/
+const carBrands = ["BMW","Benz", "Audi", "Volvo", "Porche","Lexus","Acura"]
+console.log(`***--- for each Loop on a array objects ---***`);
+
+carBrands.forEach((brand,index)=>{
+    console.log(`${brand} index ${index} in array`);
+})
+
+console.log(`***--- for each Loop on a array of objects ---***`);
+const cars = [
+    {
+        name : "Acura RL",
+        price : "$50000"
+    },
+    {
+        name : "Lexus GS",
+        price : "$60000"
+    },
+    {
+        name : "Lexus ES",
+        price : "$45000"
+    }
+]
+
+cars.forEach((car)=>{
+    console.log(`car: ${car.name}, price: ${car.price}`);
+})
