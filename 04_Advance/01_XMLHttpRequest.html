@@ -1,0 +1,34 @@
+/** XMLHttpRequest (XHR) objects are used to interact with servers. 
+  * You can retrieve data from a URL without having to do a full page refresh. 
+  * XMLHttpRequest is used heavily in AJAX programming. */
+
+/** const xhttp = new XMLHttpRequest();
+  * xhttp.open("GET", URL);
+  * xhttp.send(); */
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const URL = "https://api.github.com/users/NagendraKuppala"
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", URL);
+    xhttp.onreadystatechange = () =>{ //onreadystatechange on state change execute functoin
+        console.log(xhttp.readyState);
+        const status = xhttp.readyState; //readyState stages 1-OPENED,2-HEADERS_RECEIVED,3-LOADING,4-DONE
+        if(status === 4){
+            console.log(xhttp.response); //request response
+            console.log(xhttp.status); //request status
+        }
+    }  
+    xhttp.send(); //send request
+</script>
+</html>
+
