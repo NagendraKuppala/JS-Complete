@@ -1,2 +1,3 @@
-# JS-Complete
-Complete JS Series
+# JS-Complete Repo
+## From Basics to Advance
+
